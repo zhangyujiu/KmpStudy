@@ -1,4 +1,4 @@
-package com.kmp.demo
+package com.kmp.demo.platform
 
 interface Platform {
     val name: String
