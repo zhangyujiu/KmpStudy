@@ -8,6 +8,7 @@ class KmpApplication: Application() {
 
     override fun onCreate() {
         super.onCreate()
+        Apps.initialize(this)
         initLogger()
     }
 

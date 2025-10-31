@@ -1,4 +1,4 @@
-package com.kmp.demo
+package com.kmp.demo.screen
 
 import androidx.compose.foundation.layout.safeContentPadding
 import androidx.compose.foundation.layout.wrapContentSize
@@ -8,6 +8,8 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.ui.Modifier
+import androidx.navigation.NavController
+import com.kmp.demo.Room
 import com.kmp.demo.component.FlowLayout
 import com.kmp.demo.platform.Greeting
 import io.github.aakira.napier.Napier
@@ -16,7 +18,7 @@ import kotlin.text.ifEmpty
 
 @Preview
 @Composable
-fun MainScreen() {
+fun MainScreen(navController: NavController) {
     val greeting = remember { mutableStateOf("") }
     FlowLayout(
         modifier = Modifier
@@ -37,7 +39,13 @@ fun MainScreen() {
         ) {
             Text(greeting.value.ifEmpty { "Get Sdk Version" })
         }
-
+        Button(
+            onClick = {
+                navController.navigate(Room)
+            }
+        ) {
+            Text("Room")
+        }
 
     }
 }
