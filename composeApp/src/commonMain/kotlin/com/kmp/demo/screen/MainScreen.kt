@@ -9,6 +9,7 @@ import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.ui.Modifier
 import androidx.navigation.NavController
+import com.kmp.demo.Datastore
 import com.kmp.demo.Room
 import com.kmp.demo.component.FlowLayout
 import com.kmp.demo.platform.Greeting
@@ -46,6 +47,12 @@ fun MainScreen(navController: NavController) {
         ) {
             Text("Room")
         }
-
+        Button(
+            onClick = {
+                navController.navigate(Datastore)
+            }
+        ) {
+            Text("Datastore")
+        }
     }
 }

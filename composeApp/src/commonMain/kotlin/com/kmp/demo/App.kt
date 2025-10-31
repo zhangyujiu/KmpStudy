@@ -6,6 +6,7 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import com.kmp.demo.component.LifecycleEffect
+import com.kmp.demo.screen.DatastoreScreen
 import com.kmp.demo.screen.MainScreen
 import com.kmp.demo.screen.RoomScreen
 
@@ -17,6 +18,7 @@ fun App() {
         NavHost(navController = navController, startDestination = Main) {
             composable<Main> { MainScreen(navController) }
             composable<Room> { RoomScreen(navController) }
+            composable<Datastore> { DatastoreScreen(navController) }
         }
     }
 }
