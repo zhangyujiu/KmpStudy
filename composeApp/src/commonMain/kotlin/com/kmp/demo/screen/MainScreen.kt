@@ -21,6 +21,7 @@ import kotlin.text.ifEmpty
 @Composable
 fun MainScreen(navController: NavController) {
     val greeting = remember { mutableStateOf("") }
+    val uuid = remember { mutableStateOf("") }
     FlowLayout(
         modifier = Modifier
             .safeContentPadding()
@@ -39,6 +40,13 @@ fun MainScreen(navController: NavController) {
             }
         ) {
             Text(greeting.value.ifEmpty { "Get Sdk Version" })
+        }
+        Button(
+            onClick = {
+                uuid.value = Greeting().uuid()
+            }
+        ) {
+            Text(uuid.value.ifEmpty { "Get UUID" })
         }
         Button(
             onClick = {

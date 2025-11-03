@@ -6,4 +6,8 @@ class Greeting {
     fun greet(): String {
         return "Hello, ${platform.name}!"
     }
+
+    fun uuid():String{
+        return getUUID()
+    }
 }
